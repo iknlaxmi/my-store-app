@@ -1,25 +1,80 @@
-import logo from './logo.svg';
-import './App.css';
+import React from 'react';
+import ReactDOM from 'react-dom/client';
+import { createBrowserRouter, Outlet, RouterProvider } from 'react-router-dom';
+import Header from './components/Header';
+import TheEdit from './components/TheEdit';
+import Shoes from './components/Shoes';
+import Bags from './components/Bags';
+import Jewelry from './components/Jewelry';
+import Beauty from './components/Beauty';
+import Home from './components/Home';
+import Clothing from './components/Clothing';
+import Designers from './components/Designers';
+import NewArrivals from './components/NewArrivals';
+import Accessories from './components/Aceessories';
 
-function App() {
+const AppClient = () => {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Header />
+      <Outlet />
     </div>
   );
-}
+};
+const appRouter = createBrowserRouter([
+  {
+    path: '/',
+    element: <AppClient />,
+    children: [
+      {
+        path: '/',
+        element: <Home />,
+      },
+      {
+        path: '/theEdit',
+        element: <TheEdit />,
+      },
+      {
+        path: '/newArrivals',
+        element: <NewArrivals />,
+      },
+      {
+        path: '/designers',
+        element: <Designers />,
+      },
+      {
+        path: '/clothing',
+        element: <Clothing />,
+      },
+      {
+        path: '/shoes',
+        element: <Shoes />,
+      },
+      {
+        path: '/bags',
+        element: <Bags />,
+      },
+      {
+        path: '/accessories',
+        element: <Accessories />,
+      },
+      {
+        path: '/jewelry',
+        element: <Jewelry />,
+      },
+      {
+        path: '/beauty',
+        element: <Beauty />,
+      },
+    ],
+  },
+]);
 
+const App = () => {
+  return (
+    <div>
+      <RouterProvider router={appRouter} />
+    </div>
+  );
+};
 export default App;
