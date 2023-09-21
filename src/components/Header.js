@@ -9,7 +9,7 @@ import { useSelector } from 'react-redux';
 
 import { ReactComponent as NavLine } from '../assets/navLine.svg';
 const Header = () => {
-  const [navCollapse, setNavCollapse] = useState(false);
+  const [navCollapse, setNavCollapse] = useState(true);
   const cartItems = useSelector((store) => store.cart.items);
   /*Nav bar operation for mobile */
   const handleCollapse = () => {
