@@ -39,10 +39,10 @@ const ProductSizeData = () => {
           disabled={mediumSizeUnavailable}
           onClick={() => setSizeData('M')}
         >
-          <p className="fixed ml-5 mt-2">
+          <div className="static ml-6 mt-2">
             {mediumSizeUnavailable && <LineStrike />}
-          </p>{' '}
-          M
+          </div>
+          <div className="relative mb-12 -mt-4">M</div>
         </button>
         <button
           className={clsx(

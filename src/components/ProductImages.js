@@ -7,14 +7,49 @@ import frame4 from '../assets/Frame4.png';
 import frame5 from '../assets/Frame5.png';
 import { ReactComponent as Heart } from '../assets/heart.svg';
 
+import { Carousel } from '@material-tailwind/react';
+
 const ProductImages = () => {
   return (
     <div>
-      <div className="fixed ml-96">
+      <div className="sm:fixed ml-96 mt-2 sm:mt:0">
         <Heart />
       </div>
+      {/*For mobile*/}
       <div>
-        <ul>
+        <Carousel className="visible sm:hidden rounded-xl">
+          <img
+            src={frame5}
+            alt="farme5"
+            className="h-full w-full object-cover"
+          />
+
+          <img
+            src={frame1}
+            alt="farme1"
+            className="h-full w-full object-cover"
+          />
+
+          <img
+            src={frame2}
+            alt="farme2"
+            className="h-full w-full object-cover"
+          />
+
+          <img
+            src={frame4}
+            alt="farme4"
+            className="h-full w-full object-cover"
+          />
+
+          <img
+            src={frame3}
+            alt="farme3"
+            className="h-full w-full object-cover"
+          />
+        </Carousel>
+        {/*For desktop */}
+        <ul className="hidden sm:block">
           <li className="my-2">
             <img src={frame5} alt="farme5" />
           </li>

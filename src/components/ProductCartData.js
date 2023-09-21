@@ -11,15 +11,17 @@ const ProductCartData = () => {
   };
   return (
     <div>
-      <h1 className="text-6xl font-medium">JONATHAN SIMKHAI</h1>
-      <p>Lurex Linen Viscose Jacket in Conchiglia</p>
-      <p>$225</p>
+      <h1 className="text-4xl m-2 sm:text-6xl sm:font-medium">
+        JONATHAN SIMKHAI
+      </h1>
+      <p className="m-2">Lurex Linen Viscose Jacket in Conchiglia</p>
+      <p className="m-2">$225</p>
 
-      <div className="float-left m-2 p-2">
+      <div className="float-left m-3 p-3 sm:m-2 sm:p-2">
         <p className="font-bold">COLOR</p>
         <img className="border border-black" src={color} alt="color" />
       </div>
-      <div className="m-2 p-2">
+      <div className="m-5 p-3 sm:m-2 sm:p-2">
         <p>CONCHIGLIA</p>
         <img className="border-2" src={conchiglia} alt="conchiglia" />
       </div>
