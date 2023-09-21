@@ -2,12 +2,14 @@ import React, { useState } from 'react';
 import color from '../assets/color.png';
 import conchiglia from '../assets/conchiglia.png';
 import ProductSizeData from './ProductSizeData';
+import { useDispatch } from 'react-redux';
+import { addItem } from '../utils/cartSlice';
 
 const ProductCartData = () => {
   const [cartItems, setCartItems] = useState(0);
-
+  const dispatch = useDispatch();
   const handleCartItems = () => {
-    setCartItems(cartItems + 1);
+    dispatch(addItem());
   };
   return (
     <div>

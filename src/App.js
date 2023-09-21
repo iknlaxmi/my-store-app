@@ -12,13 +12,16 @@ import Clothing from './components/Clothing';
 import Designers from './components/Designers';
 import NewArrivals from './components/NewArrivals';
 import Accessories from './components/Aceessories';
-
+import { Provider } from 'react-redux';
+import appStore from './utils/appStore';
 const AppClient = () => {
   return (
-    <div className="App">
-      <Header />
-      <Outlet />
-    </div>
+    <Provider store={appStore}>
+      <div className="App">
+        <Header />
+        <Outlet />
+      </div>
+    </Provider>
   );
 };
 const appRouter = createBrowserRouter([

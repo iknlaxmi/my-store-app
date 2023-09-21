@@ -5,11 +5,12 @@ import { ReactComponent as Account } from '../assets/Account.svg';
 import { ReactComponent as Search } from '../assets/Search.svg';
 import { useState } from 'react';
 import clsx from 'clsx';
+import { useSelector } from 'react-redux';
 
 import { ReactComponent as NavLine } from '../assets/navLine.svg';
 const Header = () => {
   const [navCollapse, setNavCollapse] = useState(false);
-
+  const cartItems = useSelector((store) => store.cart.items);
   /*Nav bar operation for mobile */
   const handleCollapse = () => {
     if (navCollapse === true) {
@@ -68,7 +69,10 @@ const Header = () => {
               <Search />
             </li>
             <li className="px-2">
-              <Bag />
+              <Bag className="" />
+              <div className="absolute top-12 font-bold text-2xl">
+                {cartItems.length}
+              </div>
             </li>
             <li className="sm:hidden">
               <button onClick={handleCollapse}>
